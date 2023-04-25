@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:Xamarin.Forms.MaskedEntry;assembly=Xamarin.Forms.MaskedEntry"
+             x:Class="AppBancoDigital.View.Login"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+            <Image x:Name="app_logo" HeightRequest="50" Margin="0, 0, 0, 50"/>
+
+            <Frame BackgroundColor="Transparent" BorderColor="Black" Margin="20, 20, 20, 0" CornerRadius="15">
+                <Grid RowDefinitions="*, *, *, *, *, *, *">
+                    
+                    <Label Text="LOGIN" Grid.Row="0" FontSize="30" FontAttributes="Bold" 
+                           TextColor="Black" HorizontalTextAlignment="Center"/>
+
+                    <Label Text="CPF:" FontSize="25" Grid.Row="1" TextColor="Black" />
+                    <control:MaskedEntry x:Name="user_login" Grid.Row="2" Mask="XXX.XXX.XXX-XX"
+                                         Placeholder="Digite o seu CPF" PlaceholderColor="Gray"
+                                         TextColor="Black" Keyboard="Numeric"
+                                         ClearButtonVisibility="WhileEditing"/>
+
+                    <Label Text="SENHA:" FontSize="25" Grid.Row="3" TextColor="Black"/>
+                    <Entry x:Name="user_password" Grid.Row="4" Placeholder="Digite a sua senha"
+                           PlaceholderColor="Gray" TextColor="Black" IsPassword="False"
+                           ClearButtonVisibility="WhileEditing"/>
+
+                    <Button x:Name="btn_login" Clicked="btn_login_Clicked" Text="Enviar" 
+                            Grid.Row="5" Style="{StaticResource BotaoTelaLogin}" BackgroundColor="#C15300"/>
+                    <Button x:Name="btn_esqueci" Clicked="btn_esqueci_Clicked"  Text="Esqueci minha senha" 
+                            Grid.Row="6" Style="{StaticResource BotaoTelaLogin}" BackgroundColor="#3e61b1"/>
+
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
