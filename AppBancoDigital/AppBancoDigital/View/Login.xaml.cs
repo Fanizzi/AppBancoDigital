@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace AppBancoDigital.View
 {
@@ -45,6 +46,18 @@ namespace AppBancoDigital.View
         private void btn_esqueci_Clicked(object sender, EventArgs e)
         {
             App.Current.MainPage = new NavigationPage(new View.EsqueciSenha());
+        }
+
+        private async void duvida_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                await Browser.OpenAsync(new Uri("https://github.com/Fanizzi"), BrowserLaunchMode.SystemPreferred);
+            }
+            catch (Exception ex)
+            {
+                // An unexpected error occured. No browser may be installed on the device.
+            }
         }
     }
 }
