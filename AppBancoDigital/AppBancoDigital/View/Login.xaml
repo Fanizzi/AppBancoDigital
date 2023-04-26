@@ -27,7 +27,7 @@
 
                         <Label Text="SENHA:" FontSize="20" Grid.Row="3" TextColor="Black"/>
                         <Entry x:Name="user_password" Grid.Row="4" Placeholder="Digite a sua senha"
-                               PlaceholderColor="Gray" TextColor="Black" IsPassword="False"
+                               PlaceholderColor="Gray" TextColor="Black" IsPassword="True"
                                ClearButtonVisibility="WhileEditing"/>
 
                         <Button x:Name="btn_login" Clicked="btn_login_Clicked" Text="Continuar" 
