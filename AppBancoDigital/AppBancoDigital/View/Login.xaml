@@ -5,34 +5,41 @@
              x:Class="AppBancoDigital.View.Login"
              BackgroundColor="White">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <StackLayout>
 
-            <Image x:Name="app_logo" HeightRequest="50" Margin="0, 0, 0, 50"/>
+            <Grid ColumnDefinitions="*, *, *">
+                <Image x:Name="app_logo" Grid.Column="1" Grid.ColumnSpan="2" HeightRequest="33" Margin="0, 85, 0, 100"/>
 
-            <Frame BackgroundColor="Transparent" BorderColor="Black" Margin="20, 20, 20, 0" CornerRadius="15">
-                <Grid RowDefinitions="*, *, *, *, *, *, *">
-                    
-                    <Label Text="LOGIN" Grid.Row="0" FontSize="30" FontAttributes="Bold" 
-                           TextColor="Black" HorizontalTextAlignment="Center"/>
+                <ImageButton x:Name="duvida" BackgroundColor="Transparent" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="25" 
+                             Margin="0, 40, 20, 0"/>
+            </Grid>
+            
+            <StackLayout>
+                
+                <Frame VerticalOptions="Center" HorizontalOptions="Center" BorderColor="Transparent">
+                    <Grid RowDefinitions="*, *, *, *, *, *, *, *">
 
-                    <Label Text="CPF:" FontSize="25" Grid.Row="1" TextColor="Black" />
-                    <control:MaskedEntry x:Name="user_login" Grid.Row="2" Mask="XXX.XXX.XXX-XX"
-                                         Placeholder="Digite o seu CPF" PlaceholderColor="Gray"
-                                         TextColor="Black" Keyboard="Numeric"
-                                         ClearButtonVisibility="WhileEditing"/>
+                        <Label Text="CPF:" FontSize="20" Grid.Row="1" TextColor="Black" />
+                        <control:MaskedEntry x:Name="user_login" Grid.Row="2" Mask="XXX.XXX.XXX-XX"
+                                             Placeholder="Digite o seu CPF" PlaceholderColor="Gray"
+                                             TextColor="Black" Keyboard="Numeric"
+                                             ClearButtonVisibility="WhileEditing"/>
 
-                    <Label Text="SENHA:" FontSize="25" Grid.Row="3" TextColor="Black"/>
-                    <Entry x:Name="user_password" Grid.Row="4" Placeholder="Digite a sua senha"
-                           PlaceholderColor="Gray" TextColor="Black" IsPassword="False"
-                           ClearButtonVisibility="WhileEditing"/>
+                        <Label Text="SENHA:" FontSize="20" Grid.Row="3" TextColor="Black"/>
+                        <Entry x:Name="user_password" Grid.Row="4" Placeholder="Digite a sua senha"
+                               PlaceholderColor="Gray" TextColor="Black" IsPassword="False"
+                               ClearButtonVisibility="WhileEditing"/>
 
-                    <Button x:Name="btn_login" Clicked="btn_login_Clicked" Text="Enviar" 
-                            Grid.Row="5" Style="{StaticResource BotaoTelaLogin}" BackgroundColor="#C15300"/>
-                    <Button x:Name="btn_esqueci" Clicked="btn_esqueci_Clicked"  Text="Esqueci minha senha" 
-                            Grid.Row="6" Style="{StaticResource BotaoTelaLogin}" BackgroundColor="#3e61b1"/>
+                        <Button x:Name="btn_login" Clicked="btn_login_Clicked" Text="Continuar" 
+                                Grid.Row="5" Style="{StaticResource ButtonLogin}" BackgroundColor="#ff7a01"/>
+                        <Button x:Name="btn_esqueci" Clicked="btn_esqueci_Clicked"  Text="Esqueci minha senha" 
+                                Grid.Row="6" Style="{StaticResource ButtonEsqueciSenha}" BackgroundColor="Transparent"
+                                TextColor="#ff7a01"/>
+                    </Grid>
+                </Frame>
+                
+            </StackLayout>
 
-                </Grid>
-            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
