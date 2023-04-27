@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBancoDigital.View.CriarConta"
+             BackgroundColor="White"
+             Title="Boas-vindas!">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+
+                <Frame VerticalOptions="Center" HorizontalOptions="Center" BorderColor="Transparent">
+                    <Grid RowDefinitions="*, *, *, *, *, *, *, *">
+
+                        <Label Text="Nome" FontSize="15" Grid.Row="0" TextColor="DarkGray" />
+                        <Entry x:Name="nome_cadastro" Grid.Row="1" Placeholder="Digite o seu nome completo" PlaceholderColor="Gray"
+                                             TextColor="Black" Keyboard="Numeric"
+                                             ClearButtonVisibility="WhileEditing"/>
+
+                        <Label Text="SENHA:" FontSize="20" Grid.Row="2" TextColor="Black"/>
+                        <Entry x:Name="user_password" Grid.Row="3" Placeholder="Digite a sua senha"
+                               PlaceholderColor="Gray" TextColor="Black" IsPassword="True"
+                               ClearButtonVisibility="WhileEditing"/>
+
+                        
+
+                        <Button x:Name="btn_enviar" Clicked="btn_enviar_Clicked"  Text="Enviar" 
+                                Grid.Row="6" Style="{StaticResource ButtonLogin}" BackgroundColor="Transparent"
+                                TextColor="#ff7a01"/>
+                    </Grid>
+                </Frame>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

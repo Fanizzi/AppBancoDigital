@@ -59,5 +59,10 @@ namespace AppBancoDigital.View
                 // An unexpected error occured. No browser may be installed on the device.
             }
         }
+
+        private void btn_criarConta_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new NavigationPage(new View.CriarConta());
+        }
     }
 }

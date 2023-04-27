@@ -16,6 +16,12 @@
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontAttributes" Value="Bold" />
             </Style>
+
+            <Style x:Key="ButtonCriarConta" TargetType="Button">
+                <Setter Property="CornerRadius" Value="15" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
