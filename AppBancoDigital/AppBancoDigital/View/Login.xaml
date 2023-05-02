@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:control="clr-namespace:Xamarin.Forms.MaskedEntry;assembly=Xamarin.Forms.MaskedEntry"
+             xmlns:control="clr-namespace:Xamarin.Forms.MaskedEntry;assembly=Xamarin.Forms.MaskedEntry" xmlns:local="clr-namespace:AppBancoDigital.CustomRenderer"
              x:Class="AppBancoDigital.View.Login"
              BackgroundColor="White">
     <ContentPage.Content>
@@ -23,12 +23,14 @@
                         <control:MaskedEntry x:Name="user_login" Grid.Row="1" Mask="XXX.XXX.XXX-XX"
                                              Placeholder="Digite o seu CPF" PlaceholderColor="Gray"
                                              TextColor="Black" Keyboard="Numeric"
-                                             ClearButtonVisibility="WhileEditing"/>
+                                             ClearButtonVisibility="WhileEditing"
+                                             BackgroundColor="#f5f6fa"/>
 
                         <Label Text="SENHA:" FontSize="20" Grid.Row="2" TextColor="Black"/>
-                        <Entry x:Name="user_password" Grid.Row="3" Placeholder="Digite a sua senha"
-                               PlaceholderColor="Gray" TextColor="Black" IsPassword="True"
-                               ClearButtonVisibility="WhileEditing"/>
+                        <local:MyCustomeEntry x:Name="user_password" Grid.Row="3" Placeholder="Digite a sua senha"
+                                              PlaceholderColor="Gray" TextColor="Black" IsPassword="True"
+                                              ClearButtonVisibility="WhileEditing"
+                                              BackgroundColor="#f5f6fa"/>
 
                         <Button x:Name="btn_login" Clicked="btn_login_Clicked" Text="Continuar" 
                                 Grid.Row="4" Style="{StaticResource ButtonLogin}" BackgroundColor="#ff7a01"/>
@@ -36,7 +38,7 @@
                         <Button x:Name="btn_criarConta" Clicked="btn_criarConta_Clicked" Text="Não possui uma conta? Clique para criar"
                                 Grid.Row="5" Style="{StaticResource ButtonCriarConta}" BackgroundColor="Transparent"
                                 TextColor="#ff7a01"/>
-                        
+
                         <Button x:Name="btn_esqueci" Clicked="btn_esqueci_Clicked"  Text="Esqueci minha senha" 
                                 Grid.Row="6" Style="{StaticResource ButtonEsqueciSenha}" BackgroundColor="Transparent"
                                 TextColor="#ff7a01"/>

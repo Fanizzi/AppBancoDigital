@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:Xamarin.Forms.MaskedEntry;assembly=Xamarin.Forms.MaskedEntry" xmlns:local="clr-namespace:AppBancoDigital.CustomRenderer"
              x:Class="AppBancoDigital.View.CriarConta"
              BackgroundColor="White"
              Title="Boas-vindas!">
@@ -13,22 +14,35 @@
 
                         <Label Text="Nome" FontSize="15" Grid.Row="0" TextColor="DarkGray" />
                         <Entry x:Name="nome_cadastro" Grid.Row="1" Placeholder="Digite o seu nome completo" PlaceholderColor="Gray"
-                                             TextColor="Black" Keyboard="Numeric"
+                                             TextColor="Black"
                                              ClearButtonVisibility="WhileEditing"/>
 
-                        <Label Text="SENHA:" FontSize="20" Grid.Row="2" TextColor="Black"/>
+                        <Label Text="Senha" FontSize="15" Grid.Row="2" TextColor="DarkGray"/>
                         <Entry x:Name="user_password" Grid.Row="3" Placeholder="Digite a sua senha"
                                PlaceholderColor="Gray" TextColor="Black" IsPassword="True"
                                ClearButtonVisibility="WhileEditing"/>
 
-                        
+                        <Label Text="CPF" FontSize="15" Grid.Row="4" TextColor="DarkGray"/>
+                        <Entry x:Name="user_cpf" Grid.Row="5" Placeholder="Digite seu CPF"
+                               PlaceholderColor="Gray" TextColor="Black"
+                               ClearButtonVisibility="WhileEditing"/>
+
+                        <Label Text="Data de Nascimento" FontSize="15" Grid.Row="6" TextColor="DarkGray"/>
+                        <control:MaskedEntry x:Name="user_dataNasc" Grid.Row="7" Mask="XX/XX/XXXX"
+                                              Placeholder="Digite sua data de nascimento" Keyboard="Numeric"
+                                              PlaceholderColor="Gray" TextColor="Black"
+                                              ClearButtonVisibility="WhileEditing"/>
+
+
 
                         <Button x:Name="btn_enviar" Clicked="btn_enviar_Clicked"  Text="Enviar" 
-                                Grid.Row="6" Style="{StaticResource ButtonLogin}" BackgroundColor="Transparent"
-                                TextColor="#ff7a01"/>
+                                Grid.Row="8" Style="{StaticResource ButtonCriarConta}"
+                                BackgroundColor="#ff7a01"/>
+                        <Button x:Name="btn_voltarLogin" Clicked="btn_voltarLogin_Clicked" Text="Voltar para Login" 
+                                Grid.Row="9" Style="{StaticResource ButtonCriarConta}"
+                                BackgroundColor="Transparent" TextColor="#ff7a01"/>
                     </Grid>
                 </Frame>
-
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
