@@ -35,7 +35,7 @@
 
 
 
-                        <Button x:Name="btn_enviar" Clicked="btn_enviar_Clicked"  Text="Enviar" 
+                        <Button x:Name="btn_trocarSenha" Clicked="btn_enviar_Clicked"  Text="Enviar" 
                                 Grid.Row="8" Style="{StaticResource ButtonCriarConta}"
                                 BackgroundColor="#ff7a01"/>
                         <Button x:Name="btn_voltarLogin" Clicked="btn_voltarLogin_Clicked" Text="Voltar para Login" 

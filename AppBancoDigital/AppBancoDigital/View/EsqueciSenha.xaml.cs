@@ -16,5 +16,15 @@ namespace AppBancoDigital.View
         {
             InitializeComponent();
         }
+
+        private void btn_enviar_Clicked(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_voltarLogin_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new NavigationPage(new View.Login());
+        }
     }
 }
