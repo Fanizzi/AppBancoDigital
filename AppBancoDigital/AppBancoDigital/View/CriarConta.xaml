@@ -14,24 +14,27 @@
 
                         <Label Text="Nome" FontSize="15" Grid.Row="0" TextColor="DarkGray" />
                         <Entry x:Name="nome_cadastro" Grid.Row="1" Placeholder="Digite o seu nome completo" PlaceholderColor="Gray"
-                                             TextColor="Black"
-                                             ClearButtonVisibility="WhileEditing"/>
+                               TextColor="Black" BackgroundColor="#f5f6fa"
+                               ClearButtonVisibility="WhileEditing"/>
 
                         <Label Text="Senha" FontSize="15" Grid.Row="2" TextColor="DarkGray"/>
                         <Entry x:Name="user_password" Grid.Row="3" Placeholder="Digite a sua senha"
                                PlaceholderColor="Gray" TextColor="Black" IsPassword="True"
-                               ClearButtonVisibility="WhileEditing"/>
+                               ClearButtonVisibility="WhileEditing"
+                               BackgroundColor="#f5f6fa"/>
 
                         <Label Text="CPF" FontSize="15" Grid.Row="4" TextColor="DarkGray"/>
                         <Entry x:Name="user_cpf" Grid.Row="5" Placeholder="Digite seu CPF"
                                PlaceholderColor="Gray" TextColor="Black"
-                               ClearButtonVisibility="WhileEditing"/>
+                               ClearButtonVisibility="WhileEditing"
+                               BackgroundColor="#f5f6fa"/>
 
                         <Label Text="Data de Nascimento" FontSize="15" Grid.Row="6" TextColor="DarkGray"/>
                         <control:MaskedEntry x:Name="user_dataNasc" Grid.Row="7" Mask="XX/XX/XXXX"
-                                              Placeholder="Digite sua data de nascimento" Keyboard="Numeric"
-                                              PlaceholderColor="Gray" TextColor="Black"
-                                              ClearButtonVisibility="WhileEditing"/>
+                                             Placeholder="Digite sua data de nascimento" Keyboard="Numeric"
+                                             PlaceholderColor="Gray" TextColor="Black"
+                                             ClearButtonVisibility="WhileEditing"
+                                             BackgroundColor="#f5f6fa"/>
 
 
 
