@@ -34,7 +34,7 @@ namespace AppBancoDigital.View
             if (cpf_digitado == cpf_cadastrado && senha_digitada == senha_cadastrada)
             {
                 App.Current.Properties.Add("usuario_logado", cpf_digitado);
-                App.Current.MainPage = new NavigationPage(new MainPage());
+                App.Current.MainPage = new NavigationPage(new AreaUsuario());
             }
             else
             {

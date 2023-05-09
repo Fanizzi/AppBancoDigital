@@ -9,11 +9,13 @@
         <StackLayout>
             <StackLayout>
 
+                <ActivityIndicator x:Name="act_carregando" IsVisible="False" IsRunning="False" />
+
                 <Frame VerticalOptions="Center" HorizontalOptions="Center" BorderColor="Transparent">
                     <Grid RowDefinitions="*, *, *, *, *, *, *, *">
 
                         <Label Text="Nome" FontSize="15" Grid.Row="0" TextColor="DarkGray" />
-                        <Entry x:Name="nome_cadastro" Grid.Row="1" Placeholder="Digite o seu nome completo" PlaceholderColor="Gray"
+                        <Entry x:Name="user_name" Grid.Row="1" Placeholder="Digite o seu nome completo" PlaceholderColor="Gray"
                                TextColor="Black" BackgroundColor="#f5f6fa"
                                ClearButtonVisibility="WhileEditing"/>
 

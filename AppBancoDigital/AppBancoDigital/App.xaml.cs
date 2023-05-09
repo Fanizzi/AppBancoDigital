@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppBancoDigital.View;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,7 +13,7 @@ namespace AppBancoDigital
 
             if (Properties.ContainsKey("usuario_logado"))
             {
-                MainPage = new MainPage();
+                MainPage = new AreaUsuario();
             }
             else
             {
