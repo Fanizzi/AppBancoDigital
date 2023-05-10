@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:control="clr-namespace:Xamarin.Forms.MaskedEntry;assembly=Xamarin.Forms.MaskedEntry" xmlns:local="clr-namespace:AppBancoDigital.CustomRenderer"
+             xmlns:behaviorPack="clr-namespace:Xamarin.Forms.BehaviorValidationPack;assembly=Xamarin.Forms.BehaviorValidationPack"
              x:Class="AppBancoDigital.View.CriarConta"
              BackgroundColor="White"
              Title="Boas-vindas!">
@@ -14,25 +15,42 @@
                 <Frame VerticalOptions="Center" HorizontalOptions="Center" BorderColor="Transparent">
                     <Grid RowDefinitions="*, *, *, *, *, *, *, *">
 
-                        <Label Text="Nome" FontSize="15" Grid.Row="0" TextColor="DarkGray" />
+                        <Label Text="Nome" FontSize="15" Margin="0, 20, 0, 0" Grid.Row="0" TextColor="DarkGray" />
                         <Entry x:Name="user_name" Grid.Row="1" Placeholder="Digite o seu nome completo" PlaceholderColor="Gray"
                                TextColor="Black" BackgroundColor="#f5f6fa"
-                               ClearButtonVisibility="WhileEditing"/>
+                               ClearButtonVisibility="WhileEditing" />
 
-                        <Label Text="Senha" FontSize="15" Grid.Row="2" TextColor="DarkGray"/>
-                        <Entry x:Name="user_password" Grid.Row="3" Placeholder="Digite a sua senha"
+                        <Label Text="CPF" FontSize="15" Margin="0, 20, 0, 0"  Grid.Row="2" TextColor="DarkGray"/>
+                        <Entry x:Name="user_cpf" Grid.Row="3" TextColor="Black" Placeholder="Digite seu CPF" PlaceholderColor="Gray"
+                               ClearButtonVisibility="WhileEditing" BackgroundColor="#f5f6fa" Keyboard="Numeric">
+                            <Entry.Behaviors>
+                                <behaviorPack:CPFValidationBehavior />
+                                <behaviorPack:MaskedBehavior Mask="XXX.XXX.XXX-XX" />
+                            </Entry.Behaviors>
+                        </Entry>
+
+                        <Label Text="Senha" FontSize="15" Margin="0, 20, 0, 0" Grid.Row="4" TextColor="DarkGray"/>
+                        <Entry x:Name="user_password" Grid.Row="5" Placeholder="Digite a sua senha"
+                               PlaceholderColor="Gray" TextColor="Black" IsPassword="True"
+                               ClearButtonVisibility="WhileEditing" BackgroundColor="#f5f6fa">
+                            <Entry.Behaviors>
+                                <behaviorPack:PasswordValidationBehavior/>
+                            </Entry.Behaviors>
+                        </Entry>
+
+                        <Label Text="Confirmar Senha" FontSize="15" Margin="0, 20, 0, 0" Grid.Row="6" TextColor="DarkGray"/>
+                        <Entry x:Name="user_confirmpassword" Grid.Row="7" Placeholder="Confirme a sua senha"
                                PlaceholderColor="Gray" TextColor="Black" IsPassword="True"
                                ClearButtonVisibility="WhileEditing"
-                               BackgroundColor="#f5f6fa"/>
+                               BackgroundColor="#f5f6fa">
+                            <Entry.Behaviors>
+                                <behaviorPack:PasswordValidationBehavior/>
+                                <behaviorPack:CompareValidationBehavior BindingContext="{x:Reference user_password}"/>
+                            </Entry.Behaviors>
+                        </Entry>
 
-                        <Label Text="CPF" FontSize="15" Grid.Row="4" TextColor="DarkGray"/>
-                        <Entry x:Name="user_cpf" Grid.Row="5" Placeholder="Digite seu CPF"
-                               PlaceholderColor="Gray" TextColor="Black"
-                               ClearButtonVisibility="WhileEditing"
-                               BackgroundColor="#f5f6fa"/>
-
-                        <Label Text="Data de Nascimento" FontSize="15" Grid.Row="6" TextColor="DarkGray"/>
-                        <control:MaskedEntry x:Name="user_dataNasc" Grid.Row="7" Mask="XX/XX/XXXX"
+                        <Label Text="Data de Nascimento" FontSize="15" Margin="0, 20, 0, 0" Grid.Row="8" TextColor="DarkGray"/>
+                        <control:MaskedEntry x:Name="user_dataNasc" Grid.Row="9" Mask="XX/XX/XXXX"
                                              Placeholder="Digite sua data de nascimento" Keyboard="Numeric"
                                              PlaceholderColor="Gray" TextColor="Black"
                                              ClearButtonVisibility="WhileEditing"
@@ -41,10 +59,10 @@
 
 
                         <Button x:Name="btn_trocarSenha" Clicked="btn_enviar_Clicked"  Text="Enviar" 
-                                Grid.Row="8" Style="{StaticResource ButtonCriarConta}"
+                                Grid.Row="11" Style="{StaticResource ButtonCriarConta}"
                                 BackgroundColor="#ff7a01"/>
                         <Button x:Name="btn_voltarLogin" Clicked="btn_voltarLogin_Clicked" Text="Voltar para Login" 
-                                Grid.Row="9" Style="{StaticResource ButtonCriarConta}"
+                                Grid.Row="12" Style="{StaticResource ButtonCriarConta}"
                                 BackgroundColor="Transparent" TextColor="#ff7a01"/>
                     </Grid>
                 </Frame>
