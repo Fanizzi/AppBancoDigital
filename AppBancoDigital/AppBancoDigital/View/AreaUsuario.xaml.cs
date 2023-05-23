@@ -15,7 +15,40 @@ namespace AppBancoDigital.View
         public AreaUsuario()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+
             app_logo.Source = ImageSource.FromResource("AppBancoDigital.View.app_logo.png");
+            search.Source = ImageSource.FromResource("AppBancoDigital.View.searchicon.png");
+        }
+
+        private void btnPix_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMeuCartao_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInvestirPoupanca_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRecarga_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMeuPorquinho_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInvestir_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

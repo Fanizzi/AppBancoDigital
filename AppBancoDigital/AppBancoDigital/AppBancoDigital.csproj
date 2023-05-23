@@ -11,8 +11,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="View\NovaPasta\**" />
+    <EmbeddedResource Remove="View\NovaPasta\**" />
+    <None Remove="View\NovaPasta\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="View\app_logo.png" />
     <None Remove="View\icon_duvida.png" />
+    <None Remove="View\searchicon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +27,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="View\icon_duvida.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\searchicon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

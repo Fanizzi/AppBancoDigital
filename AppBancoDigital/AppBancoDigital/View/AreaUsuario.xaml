@@ -6,17 +6,36 @@
     <ContentPage.Content>
         <StackLayout>
             <Grid ColumnDefinitions="*, *, *">
-                <Image x:Name="app_logo" Grid.Column="1" HeightRequest="33" Margin="0, 85, 0, 100"/>
+                <Image x:Name="app_logo" Grid.Column="0" HeightRequest="20" Margin="30, 50, 0, 0"/>
 
+                <ImageButton x:Name="search" BackgroundColor="Transparent" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="25" 
+                             Margin="0, 50, 20, 0" />
             </Grid>
 
             <StackLayout>
 
                 <Frame VerticalOptions="Center" HorizontalOptions="Center" BorderColor="Transparent">
-                    <Grid RowDefinitions="*, *, *, *, *, *, *, *">
+                    <Grid ColumnDefinitions="*, *, *"
+                          RowDefinitions="*, *, *">
 
-                        
-                        
+                        <ImageButton x:Name="btnPix" BackgroundColor="Transparent" BorderWidth="5" BorderColor="#f5f6fa"
+                                     Grid.Column="0" Grid.Row="0" Clicked="btnPix_Clicked" />
+
+                        <ImageButton x:Name="btnMeuCartao" BackgroundColor="Transparent" BorderWidth="5" BorderColor="#f5f6fa"
+                                     Grid.Column="1" Grid.Row="0" Clicked="btnMeuCartao_Clicked" />
+
+                        <ImageButton x:Name="btnInvestirPoupanca" BackgroundColor="Transparent" BorderWidth="5" BorderColor="#f5f6fa"
+                                     Grid.Column="2" Grid.Row="0" Clicked="btnInvestirPoupanca_Clicked" />
+
+                        <ImageButton x:Name="btnRecarga" BackgroundColor="Transparent" BorderWidth="5" BorderColor="#f5f6fa"
+                                     Grid.Column="0" Grid.Row="1" Clicked="btnRecarga_Clicked" />
+
+                        <ImageButton x:Name="btnMeuPorquinho" BackgroundColor="Transparent" BorderWidth="5" BorderColor="#f5f6fa"
+                                     Grid.Column="1" Grid.Row="1" Clicked="btnMeuPorquinho_Clicked" />
+
+                        <ImageButton x:Name="btnInvestir" BackgroundColor="Transparent" BorderWidth="5" BorderColor="#f5f6fa"
+                                     Grid.Column="2" Grid.Row="1" Clicked="btnInvestir_Clicked" />
+
                     </Grid>
                 </Frame>
 

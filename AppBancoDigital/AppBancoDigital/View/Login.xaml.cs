@@ -25,7 +25,7 @@ namespace AppBancoDigital.View
 
         private void btn_login_Clicked(object sender, EventArgs e)
         {
-            string cpf_digitado = user_login.Text;
+            string cpf_digitado = user_cpf.Text;
             string senha_digitada = user_password.Text;
 
             string cpf_cadastrado = "123.456.789-10";
