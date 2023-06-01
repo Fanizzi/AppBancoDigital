@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.Text;
@@ -10,27 +10,37 @@ namespace AppBancoDigital.Service
 {
     public class DataServiceCorrentista : DataService
     {
-        // Obtem a lista de Correntistas
+        // Realiza o Login do Cliente
 
-        public static async Task<List<Correntista>> GetCorrentistasAsync()
-        {
-            string json = await DataService.GetDataFromService("/correntista");
-            List<Correntista> arr_correntistas = JsonConvert.DeserializeObject<List<Correntista>>(json);
-
-            return arr_correntistas;
-        }
-
-        // Envia um model em forma de json para insert no banco
-
-        public static async Task<Correntista> Cadastrar(Correntista c)
+        public static async Task<Correntista> LoginAsync(Correntista c)
         {
             var json_a_enviar = JsonConvert.SerializeObject(c);
 
-            string json = await DataService.PostDataToService(json_a_enviar, "/correntista/save");
 
-            Correntista co = JsonConvert.DeserializeObject<Correntista>(json);
+            Console.WriteLine("__________________________________________________________________");
+            Console.WriteLine("DADOS QUE FORAM DIGITADOS PELO USUÁRIOS E JÁ CONVERTIDOS EM JSON: ");
+            Console.WriteLine(json_a_enviar);
+            Console.WriteLine("__________________________________________________________________");
 
-            return co;
+            string json = await DataService.PostDataToService(json_a_enviar, "/correntista/entrar");
+
+            return JsonConvert.DeserializeObject<Correntista>(json);
+        }
+
+        // Envia um model 
+
+        public static async Task<Correntista> SaveAsync(Correntista c)
+        {
+            var json_a_enviar = JsonConvert.SerializeObject(c);
+
+            Console.WriteLine("__________________________________________________________________");
+            Console.WriteLine("DADOS QUE FORAM DIGITADOS PELO USUÁRIOS E JÁ CONVERTIDOS EM JSON: ");
+            Console.WriteLine(json_a_enviar);
+            Console.WriteLine("__________________________________________________________________");
+
+            string json = await DataService.PostDataToService(json_a_enviar, "/correntista/salvar");
+
+            return JsonConvert.DeserializeObject<Correntista>(json);
         }
 
 

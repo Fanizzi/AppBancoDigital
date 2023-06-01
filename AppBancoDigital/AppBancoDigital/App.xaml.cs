@@ -7,18 +7,12 @@ namespace AppBancoDigital
 {
     public partial class App : Application
     {
+        Model.Correntista DadosCorrentista { get; set; }
         public App()
         {
             InitializeComponent();
 
-            if (Properties.ContainsKey("usuario_logado"))
-            {
-                MainPage = new AreaUsuario();
-            }
-            else
-            {
-                MainPage = new View.Login();
-            }
+            MainPage = new NavigationPage(new View.Login());
         }
 
         protected override void OnStart()

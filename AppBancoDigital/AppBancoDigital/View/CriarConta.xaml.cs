@@ -20,18 +20,43 @@ namespace AppBancoDigital.View
             
         }
 
-        private void btn_enviar_Clicked(object sender, EventArgs e)
+        private async void btn_enviar_Clicked(object sender, EventArgs e)
         {
             act_carregando.IsRunning = true;
             act_carregando.IsVisible = true;
 
-            DataServiceCorrentista.Cadastrar(new Correntista()
+            try
             {
-                Nome = user_name.Text,
-                Senha = user_password.Text,
-                CPF = user_cpf.Text,
-                Data_nasc = ParseDate(user_dataNasc.Text),
-            });
+                Model.Correntista c = await DataServiceCorrentista.SaveAsync(new Model.Correntista
+                {
+                    Nome = user_name.Text,
+                    CPF = user_cpf.Text,
+                    Data_nasc = ParseDate(user_dataNasc),
+                    Senha = user_password.Text,
+                });
+
+                if (c.Id != null)
+                {
+                    /**
+                     * Vá no arquivo App.xaml.cs e veja que declarei uma propriedade chamada
+                     * DadosCorrentista, que irá armazenar os dados do correntista após o cadastro ou
+                     * login, enquanto ele estiver usando o App.
+                     */
+                    App.DadosCorrentista = c;
+
+                    /**
+                     * Navegando para a Tela Inicial após cadastrar e definir os dados do Correntista.
+                     */
+                    await Navigation.PushAsync(new View.AreaUsuario());
+                }
+                else
+                    throw new Exception("Ocorreu um erro ao salvar seu cadastro.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                await DisplayAlert("Ops!", ex.Message, "OK");
+            }
         }
 
         private void btn_voltarLogin_Clicked(object sender, EventArgs e)

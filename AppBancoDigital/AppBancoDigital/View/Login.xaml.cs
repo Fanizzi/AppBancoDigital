@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
+using AppBancoDigital.Service;
 
 namespace AppBancoDigital.View
 {
@@ -23,9 +24,9 @@ namespace AppBancoDigital.View
             duvida.Source = ImageSource.FromResource("AppBancoDigital.View.icon_duvida.png");
         }
 
-        private void btn_login_Clicked(object sender, EventArgs e)
+        private async void btn_login_Clicked(object sender, EventArgs e)
         {
-            string cpf_digitado = user_cpf.Text;
+            /*string cpf_digitado = user_cpf.Text;
             string senha_digitada = user_password.Text;
 
             string cpf_cadastrado = "123.456.789-10";
@@ -39,8 +40,31 @@ namespace AppBancoDigital.View
             else
             {
                 DisplayAlert("Erro", "Dados incorretos!", "OK");
+            }*/
+
+            try
+            {
+                Model.Correntista c = await DataServiceCorrentista.LoginAsync(new Model.Correntista
+                {
+                    CPF = user_cpf.Text,
+                    Senha = user_password.Text,
+                });
+
+                if (c.Id != null)
+                {
+                    App.Correntista = c;
+                    App.Current.MainPage = new NavigationPage(new View.AreaUsuario());
+                    //App.Current.MainPage = new View.TelaInicial();
+                }
+                else
+                    throw new Exception("Dados de login inválidos.");
+
             }
-           
+            catch (Exception ex)
+            {
+                await DisplayAlert("Ops!", ex.Message, "OK");
+            }
+
         }
 
         private void btn_esqueci_Clicked(object sender, EventArgs e)
@@ -62,7 +86,7 @@ namespace AppBancoDigital.View
 
         private void btn_criarConta_Clicked(object sender, EventArgs e)
         {
-            App.Current.MainPage = new NavigationPage(new View.CriarConta());
+            Navigation.PushAsync(new View.CriarConta());
         }
     }
 }
