@@ -31,7 +31,7 @@ namespace AppBancoDigital.View
                 {
                     Nome = user_name.Text,
                     CPF = user_cpf.Text,
-                    Data_nasc = ParseDate(user_dataNasc),
+                    //Data_nasc = ParseDate(user_dataNasc),
                     Senha = user_password.Text,
                 });
 

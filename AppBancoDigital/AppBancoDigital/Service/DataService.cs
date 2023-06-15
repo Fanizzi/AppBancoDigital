@@ -58,6 +58,10 @@ namespace AppBancoDigital.Service
                     new StringContent(json_object, Encoding.UTF8, "application/json")
                 );
 
+                Console.WriteLine("_______________________________");
+                Console.WriteLine(response.Content.ReadAsStringAsync().Result);
+                Console.WriteLine("_______________________________");
+
                 if (response.IsSuccessStatusCode)
                 {
                     json_response = response.Content.ReadAsStringAsync().Result;
