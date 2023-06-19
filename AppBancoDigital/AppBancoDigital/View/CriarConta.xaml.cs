@@ -22,6 +22,12 @@ namespace AppBancoDigital.View
 
         private async void btn_enviar_Clicked(object sender, EventArgs e)
         {
+            string[] cpf_pontuado = user_cpf.Text.Split('.', '-');
+            string cpf_digitado = cpf_pontuado[0] + cpf_pontuado[1] + cpf_pontuado[2] + cpf_pontuado[3];
+
+            DateTime data_nascimento = DateTime.Now;
+            string dataString = data_nascimento.ToString("XX/XX/XXXX");
+
             act_carregando.IsRunning = true;
             act_carregando.IsVisible = true;
 
@@ -30,8 +36,8 @@ namespace AppBancoDigital.View
                 Model.Correntista c = await DataServiceCorrentista.SaveAsync(new Model.Correntista
                 {
                     Nome = user_name.Text,
-                    CPF = user_cpf.Text,
-                    //Data_nasc = ParseDate(user_dataNasc),
+                    Cpf = cpf_digitado,
+                    Data_nasc = data_nascimento.Date,
                     Senha = user_password.Text,
                 });
 
@@ -42,7 +48,7 @@ namespace AppBancoDigital.View
                      * DadosCorrentista, que irá armazenar os dados do correntista após o cadastro ou
                      * login, enquanto ele estiver usando o App.
                      */
-                    App.DadosCorrentista = c;
+                    App.Correntista = c;
 
                     /**
                      * Navegando para a Tela Inicial após cadastrar e definir os dados do Correntista.
