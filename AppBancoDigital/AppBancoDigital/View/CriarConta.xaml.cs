@@ -25,9 +25,6 @@ namespace AppBancoDigital.View
             string[] cpf_pontuado = user_cpf.Text.Split('.', '-');
             string cpf_digitado = cpf_pontuado[0] + cpf_pontuado[1] + cpf_pontuado[2] + cpf_pontuado[3];
 
-            DateTime data_nascimento = DateTime.Now;
-            string dataString = data_nascimento.ToString("XX/XX/XXXX");
-
             act_carregando.IsRunning = true;
             act_carregando.IsVisible = true;
 
@@ -37,7 +34,7 @@ namespace AppBancoDigital.View
                 {
                     Nome = user_name.Text,
                     Cpf = cpf_digitado,
-                    Data_nasc = data_nascimento.Date,
+                    Data_nasc = user_dataNasc.Date.ToString("yyyy-MM-dd"),
                     Senha = user_password.Text,
                 });
 
@@ -53,7 +50,7 @@ namespace AppBancoDigital.View
                     /**
                      * Navegando para a Tela Inicial após cadastrar e definir os dados do Correntista.
                      */
-                    await Navigation.PushAsync(new View.AreaUsuario());
+                    await Navigation.PushAsync(new View.Login());
                 }
                 else
                     throw new Exception("Ocorreu um erro ao salvar seu cadastro.");

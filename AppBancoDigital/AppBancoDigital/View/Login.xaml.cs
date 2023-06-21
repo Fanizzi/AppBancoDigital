@@ -42,11 +42,14 @@ namespace AppBancoDigital.View
                 DisplayAlert("Erro", "Dados incorretos!", "OK");
             }*/
 
+            string[] cpf_pontuado = user_cpf.Text.Split('.', '-');
+            string cpf_digitado = cpf_pontuado[0] + cpf_pontuado[1] + cpf_pontuado[2] + cpf_pontuado[3];
+
             try
             {
                 Model.Correntista c = await DataServiceCorrentista.LoginAsync(new Model.Correntista
                 {
-                    Cpf = user_cpf.Text,
+                    Cpf = cpf_digitado,
                     Senha = user_password.Text,
                 });
 

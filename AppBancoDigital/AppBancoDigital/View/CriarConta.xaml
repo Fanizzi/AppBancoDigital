@@ -48,14 +48,10 @@
                                 <behaviorPack:CompareValidationBehavior BindingContext="{x:Reference user_password}"/>
                             </Entry.Behaviors>
                         </Entry>
-
+                    
                         <Label Text="Data de Nascimento" FontSize="15" Margin="0, 20, 0, 0" Grid.Row="8" TextColor="DarkGray"/>
-                        <control:MaskedEntry x:Name="user_dataNasc" Grid.Row="9" Mask="XX/XX/XXXX"
-                                             Placeholder="Digite sua data de nascimento" Keyboard="Numeric"
-                                             PlaceholderColor="Gray" TextColor="Black"
-                                             ClearButtonVisibility="WhileEditing"
-                                             BackgroundColor="#f5f6fa"/>
 
+                        <DatePicker x:Name="user_dataNasc" Grid.Row="9"/>
 
 
                         <Button x:Name="btn_trocarSenha" Clicked="btn_enviar_Clicked"  Text="Enviar" 
