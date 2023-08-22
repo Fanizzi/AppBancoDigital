@@ -19,6 +19,12 @@ namespace AppBancoDigital.View
 
             app_logo.Source = ImageSource.FromResource("AppBancoDigital.View.app_logo.png");
             search.Source = ImageSource.FromResource("AppBancoDigital.View.searchicon.png");
+            btnPix.Source = ImageSource.FromResource("AppBancoDigital.Images.icone-pix.png");
+            btnMeuCartao.Source = ImageSource.FromResource("AppBancoDigital.Images.credit-card-regular.png");
+            btnInvestirPoupanca.Source = ImageSource.FromResource("AppBancoDigital.Images.chart-line-solid.png");
+            btnRecarga.Source = ImageSource.FromResource("AppBancoDigital.Images.mobile-screen-button-solid.png");
+            btnMeuPorquinho.Source = ImageSource.FromResource("AppBancoDigital.Images.piggy-bank-solid.png");
+            btnInvestir.Source = ImageSource.FromResource("AppBancoDigital.Images.bitcoin.png");
         }
 
         private void btnPix_Clicked(object sender, EventArgs e)

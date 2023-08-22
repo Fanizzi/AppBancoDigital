@@ -17,9 +17,36 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Images\bitcoin.png" />
+    <None Remove="Images\chart-line-solid.png" />
+    <None Remove="Images\credit-card-regular.png" />
+    <None Remove="Images\icone-pix.png" />
+    <None Remove="Images\mobile-screen-button-solid.png" />
+    <None Remove="Images\piggy-bank-solid.png" />
     <None Remove="View\app_logo.png" />
     <None Remove="View\icon_duvida.png" />
     <None Remove="View\searchicon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\bitcoin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\chart-line-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\credit-card-regular.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\icone-pix.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\mobile-screen-button-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\piggy-bank-solid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>

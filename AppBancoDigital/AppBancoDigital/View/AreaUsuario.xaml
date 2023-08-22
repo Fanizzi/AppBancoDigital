@@ -5,41 +5,47 @@
              BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout>
-            <Grid ColumnDefinitions="*, *, *">
-                <Image x:Name="app_logo" Grid.Column="0" HeightRequest="20" Margin="30, 50, 0, 0"/>
+            <Frame>
+                <Grid ColumnDefinitions="*, *, *">
+                    <Image x:Name="app_logo" Grid.Column="0" HeightRequest="20" Margin="0, 30, 0, 0"  />
 
-                <ImageButton x:Name="search" BackgroundColor="Transparent" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="25" 
-                             Margin="0, 50, 20, 0" />
-            </Grid>
+                    <ImageButton x:Name="search" BackgroundColor="Transparent" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="25" 
+                             Margin="0, 35, 0, 0" />
+                </Grid>
+            </Frame>
 
-            <StackLayout>
-
-                <Frame VerticalOptions="Center" HorizontalOptions="Center" BorderColor="Transparent">
+            <Frame VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#f5f6fa">
+                
                     <Grid ColumnDefinitions="*, *, *"
                           RowDefinitions="*, *, *">
 
-                        <ImageButton x:Name="btnPix" BackgroundColor="Transparent" BorderWidth="5" BorderColor="#f5f6fa"
-                                     Grid.Column="0" Grid.Row="0" Clicked="btnPix_Clicked" />
+                        <ImageButton x:Name="btnPix" BackgroundColor="White" BorderWidth="1.5" BorderColor="#e4e4e4"
+                                     Grid.Column="0" Grid.Row="0" CornerRadius="15" Clicked="btnPix_Clicked"
+                                     HeightRequest="80" Padding="20"  HorizontalOptions="CenterAndExpand" />
 
-                        <ImageButton x:Name="btnMeuCartao" BackgroundColor="Transparent" BorderWidth="5" BorderColor="#f5f6fa"
-                                     Grid.Column="1" Grid.Row="0" Clicked="btnMeuCartao_Clicked" />
+                        <ImageButton x:Name="btnMeuCartao" BackgroundColor="White" BorderWidth="1.5" BorderColor="#e4e4e4" 
+                                     Grid.Column="1" Grid.Row="0" Clicked="btnMeuCartao_Clicked"
+                                     HeightRequest="80" Padding="20" CornerRadius="15" HorizontalOptions="CenterAndExpand" />
 
-                        <ImageButton x:Name="btnInvestirPoupanca" BackgroundColor="Transparent" BorderWidth="5" BorderColor="#f5f6fa"
-                                     Grid.Column="2" Grid.Row="0" Clicked="btnInvestirPoupanca_Clicked" />
+                        <ImageButton x:Name="btnInvestirPoupanca" BackgroundColor="White" BorderWidth="1.5" BorderColor="#e4e4e4"
+                                     Grid.Column="2" Grid.Row="0" Clicked="btnInvestirPoupanca_Clicked" 
+                                     HeightRequest="80" Padding="20" CornerRadius="15" HorizontalOptions="CenterAndExpand"/>
 
-                        <ImageButton x:Name="btnRecarga" BackgroundColor="Transparent" BorderWidth="5" BorderColor="#f5f6fa"
-                                     Grid.Column="0" Grid.Row="1" Clicked="btnRecarga_Clicked" />
+                        <ImageButton x:Name="btnRecarga" BackgroundColor="White" BorderWidth="1.5" BorderColor="#e4e4e4"
+                                     Grid.Column="0" Grid.Row="1" Clicked="btnRecarga_Clicked" 
+                                     HeightRequest="80" Padding="20" CornerRadius="15" HorizontalOptions="Center"/>
 
-                        <ImageButton x:Name="btnMeuPorquinho" BackgroundColor="Transparent" BorderWidth="5" BorderColor="#f5f6fa"
-                                     Grid.Column="1" Grid.Row="1" Clicked="btnMeuPorquinho_Clicked" />
+                        <ImageButton x:Name="btnMeuPorquinho" BackgroundColor="White" BorderWidth="1.5" BorderColor="#e4e4e4"
+                                     Grid.Column="1" Grid.Row="1" Clicked="btnMeuPorquinho_Clicked" 
+                                     HeightRequest="80" Padding="20" CornerRadius="15" HorizontalOptions="CenterAndExpand"/>
 
-                        <ImageButton x:Name="btnInvestir" BackgroundColor="Transparent" BorderWidth="5" BorderColor="#f5f6fa"
-                                     Grid.Column="2" Grid.Row="1" Clicked="btnInvestir_Clicked" />
+                        <ImageButton x:Name="btnInvestir" BackgroundColor="White" BorderWidth="1.5" BorderColor="#e4e4e4"
+                                     Grid.Column="2" Grid.Row="1" Clicked="btnInvestir_Clicked" 
+                                     HeightRequest="80" Padding="20" CornerRadius="15" HorizontalOptions="Center"/>
 
                     </Grid>
                 </Frame>
 
-            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
