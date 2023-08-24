@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:control="clr-namespace:Xamarin.Forms.MaskedEntry;assembly=Xamarin.Forms.MaskedEntry" xmlns:local="clr-namespace:AppBancoDigital.CustomRenderer"
+             xmlns:behaviorPack="clr-namespace:Xamarin.Forms.BehaviorValidationPack;assembly=Xamarin.Forms.BehaviorValidationPack"
              x:Class="AppBancoDigital.View.EsqueciSenha"
              BackgroundColor="White"
              Title="Esqueci a Senha">
@@ -10,21 +11,24 @@
             <Frame HorizontalOptions="Center" VerticalOptions="Center" BorderColor="Transparent">
                 <Grid RowDefinitions="*, *, *, *, *, *, *, *">
 
-                    <Label Text="CPF" FontSize="15" Grid.Row="0" TextColor="DarkGray"/>
-                    <control:MaskedEntry x:Name="user_cpf" Grid.Row="1" Mask="XXX.XXX.XXX-XX" Keyboard="Numeric"
-                                         Placeholder="Digite seu CPF"
-                                         PlaceholderColor="Gray" TextColor="Black"
-                                         ClearButtonVisibility="WhileEditing"
-                                         BackgroundColor="#f5f6fa"/>
+                    <Label Text="CPF" FontSize="15" Grid.Row="0" Margin="0, 20, 0, 0" TextColor="DarkGray"/>
+                    <local:MyCustomeEntry x:Name="user_cpf" Grid.Row="1" TextColor="Black" Placeholder="Digite seu CPF" PlaceholderColor="Gray"
+                               ClearButtonVisibility="WhileEditing" BackgroundColor="#f5f6fa" Keyboard="Numeric">
+                        <Entry.Behaviors>
+                            <behaviorPack:CPFValidationBehavior />
+                            <behaviorPack:MaskedBehavior Mask="XXX.XXX.XXX-XX" />
+                        </Entry.Behaviors>
+                    </local:MyCustomeEntry>
 
-                    <Label Text="Senha" FontSize="15" Grid.Row="2" TextColor="DarkGray"/>
-                    <Entry x:Name="user_password" Grid.Row="3" Placeholder="Digite a sua senha"
+
+                    <Label Text="Senha" FontSize="15" Grid.Row="2" Margin="0, 20, 0, 0" TextColor="DarkGray"/>
+                    <local:MyCustomeEntry x:Name="user_password" Grid.Row="3" Placeholder="Digite a sua senha"
                            PlaceholderColor="Gray" TextColor="Black" IsPassword="True"
                            ClearButtonVisibility="WhileEditing"
                            BackgroundColor="#f5f6fa"/>
 
-                    <Label Text="Confirmar Senha" FontSize="15" Grid.Row="4" TextColor="DarkGray"/>
-                    <Entry x:Name="user_passwordConfirm" Grid.Row="5" Placeholder="Confirme sua senha"
+                    <Label Text="Confirmar Senha" FontSize="15" Grid.Row="4" Margin="0, 20, 0, 0" TextColor="DarkGray"/>
+                    <local:MyCustomeEntry x:Name="user_passwordConfirm" Grid.Row="5" Placeholder="Confirme sua senha"
                            PlaceholderColor="Gray" TextColor="Black" IsPassword="True"
                            ClearButtonVisibility="WhileEditing"
                            BackgroundColor="#f5f6fa"/>

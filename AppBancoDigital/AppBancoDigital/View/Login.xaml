@@ -21,13 +21,14 @@
                     <Grid RowDefinitions="*, *, *, *, *, *, *, *">
 
                         <Label Text="CPF:" FontSize="20" Margin="0, 20, 0, 0" Grid.Row="0" TextColor="Black" />
-                        <Entry x:Name="user_cpf" Grid.Row="1" TextColor="Black" Placeholder="Digite seu CPF" PlaceholderColor="Gray"
-                               ClearButtonVisibility="WhileEditing" BackgroundColor="#f5f6fa" Keyboard="Numeric">
+                        <local:MyCustomeEntry x:Name="user_cpf" Grid.Row="1" TextColor="Black" Placeholder="Digite seu CPF" 
+                                              PlaceholderColor="Gray" ClearButtonVisibility="WhileEditing"
+                                              BackgroundColor="#f5f6fa" Keyboard="Numeric">
                             <Entry.Behaviors>
                                 <behaviorPack:CPFValidationBehavior />
                                 <behaviorPack:MaskedBehavior Mask="XXX.XXX.XXX-XX"/>
                             </Entry.Behaviors>
-                        </Entry>
+                        </local:MyCustomeEntry>
 
                         <Label Text="SENHA:" FontSize="20" Margin="0, 20, 0, 0" Grid.Row="2" TextColor="Black"/>
                         <local:MyCustomeEntry x:Name="user_password" Grid.Row="3" Placeholder="Digite a sua senha"
