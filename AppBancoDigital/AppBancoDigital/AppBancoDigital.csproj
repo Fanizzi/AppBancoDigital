@@ -17,6 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Images\4abbf187bace43d5a468ed07b8a0ccaa_20211130_banner_cartaogold_750x460-min.jpg" />
+    <None Remove="Images\banner-area-usuario.jpg" />
     <None Remove="Images\bitcoin.png" />
     <None Remove="Images\chart-line-solid.png" />
     <None Remove="Images\credit-card-regular.png" />
@@ -29,6 +31,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Images\banner-area-usuario.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Images\bitcoin.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

@@ -25,6 +25,7 @@ namespace AppBancoDigital.View
             btnRecarga.Source = ImageSource.FromResource("AppBancoDigital.Images.mobile-screen-button-solid.png");
             btnMeuPorquinho.Source = ImageSource.FromResource("AppBancoDigital.Images.piggy-bank-solid.png");
             btnInvestir.Source = ImageSource.FromResource("AppBancoDigital.Images.bitcoin.png");
+            banner.Source = ImageSource.FromResource("AppBancoDigital.Images.banner-area-usuario.jpg");
         }
 
         private void btnPix_Clicked(object sender, EventArgs e)

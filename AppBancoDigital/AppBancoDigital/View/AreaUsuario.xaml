@@ -44,7 +44,11 @@
                                      HeightRequest="80" Padding="20" CornerRadius="15" HorizontalOptions="Center"/>
 
                     </Grid>
-                </Frame>
+            </Frame>
+
+            <Frame VerticalOptions="Center" HorizontalOptions="Center">
+                <Image x:Name="banner" Source="banner-area-usuario.jpg" />
+            </Frame>
 
         </StackLayout>
     </ContentPage.Content>
