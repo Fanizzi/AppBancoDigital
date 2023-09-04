@@ -6,11 +6,19 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame>
-                <Grid ColumnDefinitions="*, *, *">
+                <Grid ColumnDefinitions="*, *, *"
+                      RowDefinitions="auto">
                     <Image x:Name="app_logo" Grid.Column="0" HeightRequest="20" Margin="0, 30, 0, 0"  />
 
                     <ImageButton x:Name="search" BackgroundColor="Transparent" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="25" 
                              Margin="0, 35, 0, 0" />
+
+                    <Label Text="R$ 0,00" TextColor="Black" FontSize="24" FontAttributes="Bold"
+                           Grid.Row="1" Grid.Column="0" Margin="0, 20, 0, 0"/>
+                    <ImageButton x:Name="btnEye" BackgroundColor="Transparent" Grid.Column="2" Grid.Row="1"
+                                 HeightRequest="10"/>
+                    <Button Text="Ver extrato" TextColor="#ff7a01" FontSize="10" BackgroundColor="Transparent" 
+                           Grid.Row="2" Grid.Column="0"/>
                 </Grid>
             </Frame>
 

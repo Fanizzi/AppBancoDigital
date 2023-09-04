@@ -21,7 +21,9 @@
     <None Remove="Images\banner-area-usuario.jpg" />
     <None Remove="Images\bitcoin.png" />
     <None Remove="Images\chart-line-solid.png" />
+    <None Remove="Images\close-eye.png" />
     <None Remove="Images\credit-card-regular.png" />
+    <None Remove="Images\eye.png" />
     <None Remove="Images\icone-pix.png" />
     <None Remove="Images\mobile-screen-button-solid.png" />
     <None Remove="Images\piggy-bank-solid.png" />
@@ -40,7 +42,13 @@
     <EmbeddedResource Include="Images\chart-line-solid.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Images\close-eye.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Images\credit-card-regular.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\eye.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Images\icone-pix.png">
