@@ -27,9 +27,10 @@ namespace AppBancoDigital.View
             btnInvestir.Source = ImageSource.FromResource("AppBancoDigital.Images.bitcoin.png");
             banner.Source = ImageSource.FromResource("AppBancoDigital.Images.banner-area-usuario.jpg");
             btnEye.Source = ImageSource.FromResource("AppBancoDigital.Images.eye.png");
+            btnClosedEye.Source = ImageSource.FromResource("AppBancoDigital.Images.close-eye.png");
         }
 
-        private void btnPix_Clicked(object sender, EventArgs e)-
+        private void btnPix_Clicked(object sender, EventArgs e)
         {
 
         }
@@ -57,6 +58,34 @@ namespace AppBancoDigital.View
         private void btnInvestir_Clicked(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEye_Clicked(object sender, EventArgs e)
+        {
+
+        }
+        private void btnVerExtrato_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void onClickHideBalance_Tapped(object sender, EventArgs e)
+        {
+            btnClosedEye.IsVisible = true;
+            btnEye.IsVisible = false;
+            
+
+
+            lbl_balance.Text = "R$ ****";
+
+
+        }
+        private void onClickShowBalance_Tapped(object sender, EventArgs e)
+        {
+            btnClosedEye.IsVisible = false;
+            btnEye.IsVisible = true;
+
+            lbl_balance.Text = "R$ 1000,00";
         }
     }
 }
