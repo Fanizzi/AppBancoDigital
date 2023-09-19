@@ -46,7 +46,7 @@ namespace AppBancoDigital.View
                      * login, enquanto ele estiver usando o App.
                      */
                     App.Correntista = c;
-
+                    
                     /**
                      * Navegando para a Tela Inicial após cadastrar e definir os dados do Correntista.
                      */
