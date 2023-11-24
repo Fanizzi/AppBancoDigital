@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -28,11 +29,12 @@ namespace AppBancoDigital.View
             banner.Source = ImageSource.FromResource("AppBancoDigital.Images.banner-area-usuario.jpg");
             btnEye.Source = ImageSource.FromResource("AppBancoDigital.Images.eye.png");
             btnClosedEye.Source = ImageSource.FromResource("AppBancoDigital.Images.close-eye.png");
+            duvida.Source = ImageSource.FromResource("AppBancoDigital.View.icon_duvida.png");
         }
 
         private void btnPix_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new View.Pix.PixArea());
         }
 
         private void btnMeuCartao_Clicked(object sender, EventArgs e)
@@ -86,6 +88,18 @@ namespace AppBancoDigital.View
             btnEye.IsVisible = true;
 
             lbl_balance.Text = "R$ 1000,00";
+        }
+
+        private async void duvida_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                await Browser.OpenAsync(new Uri("https://github.com/Fanizzi"), BrowserLaunchMode.SystemPreferred);
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Ops!", ex.Message, "OK");
+            }
         }
     }
 }

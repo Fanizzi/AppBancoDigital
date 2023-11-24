@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBancoDigital.View.Pix.PixArea">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Pagar com Pix"
+                FontAttributes="Bold"
+                FontSize="25"
+                TextColor="Black"
+                HorizontalOptions="Center"
+                Margin="0, 40, 0, 0"/>
+
+            <Grid ColumnDefinitions="*,*,*" Margin="10,20,10,0" RowDefinitions="130" >
+                
+                <ImageButton  x:Name="btn_PagarQR" Clicked="btn_PagarQR_Clicked" Grid.Column="0" 
+                              WidthRequest="100"  HeightRequest="10" BackgroundColor="LightGray" 
+                              BorderColor="Black" CornerRadius="40" Scale="0.8" Padding="18"/>
+                
+                <ImageButton  x:Name="btn_PagarChave" Clicked="btn_PagarChave_Clicked" Grid.Column="1"  
+                              BackgroundColor="LightGray" CornerRadius="33" Scale="0.8" Padding="30"/>
+                
+                <ImageButton  x:Name="btn_PagarCopyPaste" Clicked="btn_PagarCopyPaste_Clicked" Grid.Column="2"  
+                              BackgroundColor="LightGray" CornerRadius="33"  Padding="30"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

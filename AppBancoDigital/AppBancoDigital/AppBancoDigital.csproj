@@ -11,12 +11,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="View\NovaPasta\**" />
-    <EmbeddedResource Remove="View\NovaPasta\**" />
-    <None Remove="View\NovaPasta\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="Images\4abbf187bace43d5a468ed07b8a0ccaa_20211130_banner_cartaogold_750x460-min.jpg" />
     <None Remove="Images\banner-area-usuario.jpg" />
     <None Remove="Images\bitcoin.png" />
@@ -27,6 +21,9 @@
     <None Remove="Images\icone-pix.png" />
     <None Remove="Images\mobile-screen-button-solid.png" />
     <None Remove="Images\piggy-bank-solid.png" />
+    <None Remove="Images\pix-chave.png" />
+    <None Remove="Images\pix-copyandpaste.png" />
+    <None Remove="Images\qr-code.png" />
     <None Remove="View\app_logo.png" />
     <None Remove="View\icon_duvida.png" />
     <None Remove="View\searchicon.png" />
@@ -60,6 +57,15 @@
     <EmbeddedResource Include="Images\piggy-bank-solid.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Images\pix-chave.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\pix-copyandpaste.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\qr-code.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
@@ -76,6 +82,7 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="QRCoder" Version="1.4.3" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="Xamarin.Forms.BehaviorValidationPack" Version="1.1.1" />
@@ -93,6 +100,15 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\Login.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\Pix\LerQRCode.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\Pix\MostrarQRCode.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\Pix\PixArea.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -10,8 +10,11 @@
                       RowDefinitions="auto">
                     <Image x:Name="app_logo" Grid.Column="0" HeightRequest="20" Margin="0, 30, 0, 0"  />
 
-                    <ImageButton x:Name="search" BackgroundColor="Transparent" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="25" 
-                             Margin="0, 35, 0, 0" />
+                    <ImageButton x:Name="search" BackgroundColor="Transparent" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="35" 
+                             Margin="0, 40, 50, 0" />
+                    
+                    <ImageButton x:Name="duvida" BackgroundColor="Transparent" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="25" 
+                             Margin="0, 43, 0, 0" Clicked="duvida_Clicked"/>
 
                     <Label Text="R$ 1000,00" x:Name="lbl_balance" TextColor="Black" FontSize="24" FontAttributes="Bold"
                            Grid.Row="1" Grid.Column="0" Margin="0, 20, 0, 0" Grid.ColumnSpan="2" IsVisible="True"/>
@@ -28,8 +31,8 @@
                             <TapGestureRecognizer x:Name="onClickShowBalance" Tapped="onClickShowBalance_Tapped"/>
                         </Image.GestureRecognizers>
                     </Image>
-                    <Button x:Name="btnVerExtrato" Text="Ver extrato" TextColor="#ff7a01" FontSize="10" BackgroundColor="Transparent" 
-                           Grid.Row="2" Grid.Column="0" Clicked="btnVerExtrato_Clicked"/>
+                    <Button x:Name="btnVerExtrato" Text="Ver Extrato" TextColor="#ff7a01" FontSize="15" BackgroundColor="Transparent" 
+                           Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Margin="0, 0, 35, 0"   Clicked="btnVerExtrato_Clicked"/>
                 </Grid>
             </Frame>
 
@@ -66,7 +69,7 @@
             </Frame>
 
             <Frame VerticalOptions="Center" HorizontalOptions="Center">
-                <Image x:Name="banner" Source="banner-area-usuario.jpg" />
+                <Image x:Name="banner" Source="banner-area-usuario.jpg"/>
             </Frame>
 
         </StackLayout>
