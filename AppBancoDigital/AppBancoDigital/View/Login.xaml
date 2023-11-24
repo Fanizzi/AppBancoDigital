@@ -11,8 +11,8 @@
             <Grid ColumnDefinitions="*, *, *">
                 <Image x:Name="app_logo" Grid.Column="1" Grid.ColumnSpan="2" HeightRequest="33" Margin="0, 85, 0, 100"/>
 
-                <ImageButton x:Name="duvida" BackgroundColor="Transparent" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="25" 
-                             Margin="0, 40, 20, 0" Clicked="duvida_Clicked"/>
+                <ImageButton x:Name="btnDuvida" BackgroundColor="Transparent" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="25" 
+                             Margin="0, 40, 20, 0" Clicked="btnDuvida_Clicked"/>
             </Grid>
             
             <StackLayout>

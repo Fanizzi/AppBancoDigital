@@ -4,25 +4,34 @@
              x:Class="AppBancoDigital.View.Pix.PixArea">
     <ContentPage.Content>
         <StackLayout>
+            <Grid ColumnDefinitions="3"
+                  RowDefinitions="Auto">
+                <Label Text="Pix"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       Grid.Column="2"
+                       Margin="0, 40, 0, 0"/>
+            
+                <ImageButton x:Name="btnVoltar" Clicked="btnVoltar_Clicked" BackgroundColor="Transparent"
+                         Scale="0.6" HorizontalOptions="Start" Grid.Column="1" Margin="10, 32, 0, 0"/>
 
-            <Label Text="Pagar com Pix"
-                FontAttributes="Bold"
-                FontSize="25"
-                TextColor="Black"
-                HorizontalOptions="Center"
-                Margin="0, 40, 0, 0"/>
+                <ImageButton x:Name="btnDuvida" BackgroundColor="Transparent" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="25" 
+                             Margin="0, 40, 20, 0" Clicked="btnDuvida_Clicked"/>
+            </Grid>
 
             <Grid ColumnDefinitions="*,*,*" Margin="10,20,10,0" RowDefinitions="130" >
                 
-                <ImageButton  x:Name="btn_PagarQR" Clicked="btn_PagarQR_Clicked" Grid.Column="0" 
+                <ImageButton  x:Name="btnPagarQR" Clicked="btn_PagarQR_Clicked" Grid.Column="0" 
                               WidthRequest="100"  HeightRequest="10" BackgroundColor="LightGray" 
                               BorderColor="Black" CornerRadius="40" Scale="0.8" Padding="18"/>
                 
-                <ImageButton  x:Name="btn_PagarChave" Clicked="btn_PagarChave_Clicked" Grid.Column="1"  
+                <ImageButton  x:Name="btnPagarChave" Clicked="btn_PagarChave_Clicked" Grid.Column="1"  
                               BackgroundColor="LightGray" CornerRadius="33" Scale="0.8" Padding="30"/>
                 
-                <ImageButton  x:Name="btn_PagarCopyPaste" Clicked="btn_PagarCopyPaste_Clicked" Grid.Column="2"  
-                              BackgroundColor="LightGray" CornerRadius="33"  Padding="30"/>
+                <ImageButton  x:Name="btnPagarCopyPaste" Clicked="btn_PagarCopyPaste_Clicked" Grid.Column="2"  
+                              BackgroundColor="LightGray" CornerRadius="33" Scale="0.8" Padding="30"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

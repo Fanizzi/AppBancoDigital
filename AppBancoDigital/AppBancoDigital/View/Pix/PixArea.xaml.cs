@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -16,9 +17,11 @@ namespace AppBancoDigital.View.Pix
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            btn_PagarQR.Source = ImageSource.FromResource("AppBancoDigital.Images.qr-code.png");
-            btn_PagarChave.Source = ImageSource.FromResource("AppBancoDigital.Images.pix-chave.png");
-            btn_PagarCopyPaste.Source = ImageSource.FromResource("AppBancoDigital.Images.pix-copyandpaste.png");
+            btnPagarQR.Source = ImageSource.FromResource("AppBancoDigital.Images.qr-code.png");
+            btnPagarChave.Source = ImageSource.FromResource("AppBancoDigital.Images.pix-chave.png");
+            btnPagarCopyPaste.Source = ImageSource.FromResource("AppBancoDigital.Images.pix-copyandpaste.png");
+            btnVoltar.Source = ImageSource.FromResource("AppBancoDigital.Images.left-arrow.png");
+            btnDuvida.Source = ImageSource.FromResource("AppBancoDigital.View.icon_duvida.png");
         }
 
         private void btn_PagarQR_Clicked(object sender, EventArgs e)
@@ -34,6 +37,23 @@ namespace AppBancoDigital.View.Pix
         private void btn_PagarCopyPaste_Clicked(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVoltar_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AreaUsuario());
+        }
+
+        private async void btnDuvida_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                await Browser.OpenAsync(new Uri("https://github.com/Fanizzi"), BrowserLaunchMode.SystemPreferred);
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Ops!", ex.Message, "OK");
+            }
         }
     }
 }

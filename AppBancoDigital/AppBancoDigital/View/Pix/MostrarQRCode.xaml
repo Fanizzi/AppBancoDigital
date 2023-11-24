@@ -8,12 +8,22 @@
 
             <StackLayout>
 
-                <Label Text="Pix" 
+                <Grid ColumnDefinitions="3"
+                  RowDefinitions="Auto">
+                    <Label Text="Pix"
                        FontAttributes="Bold"
-                       FontSize="25"
+                       FontSize="20"
                        TextColor="Black"
                        HorizontalOptions="Center"
+                       Grid.Column="2"
                        Margin="0, 40, 0, 0"/>
+
+                    <ImageButton x:Name="btnVoltar" Clicked="btnVoltar_Clicked" BackgroundColor="Transparent"
+                         Scale="0.6" HorizontalOptions="Start" Grid.Column="1" Margin="10, 32, 0, 0"/>
+
+                    <ImageButton x:Name="btnDuvida" BackgroundColor="Transparent" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="25" 
+                             Margin="0, 40, 20, 0" Clicked="btnDuvida_Clicked"/>
+                </Grid>
 
                 <Frame CornerRadius="15" Padding="40" VerticalOptions="StartAndExpand" 
                        WidthRequest="50" Scale="0.9" Margin="10,10,10,135"

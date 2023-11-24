@@ -21,7 +21,7 @@ namespace AppBancoDigital.View
             NavigationPage.SetHasNavigationBar(this, false);
 
             app_logo.Source = ImageSource.FromResource("AppBancoDigital.View.app_logo.png");
-            duvida.Source = ImageSource.FromResource("AppBancoDigital.View.icon_duvida.png");
+            btnDuvida.Source = ImageSource.FromResource("AppBancoDigital.View.icon_duvida.png");
         }
 
         private async void btn_login_Clicked(object sender, EventArgs e)
@@ -75,7 +75,12 @@ namespace AppBancoDigital.View
             App.Current.MainPage = new NavigationPage(new View.EsqueciSenha());
         }
 
-        private async void duvida_Clicked(object sender, EventArgs e)
+        private void btn_criarConta_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new View.CriarConta());
+        }
+
+        private async void btnDuvida_Clicked(object sender, EventArgs e)
         {
             try
             {
@@ -85,11 +90,6 @@ namespace AppBancoDigital.View
             {
                 await DisplayAlert("Ops!", ex.Message, "OK");
             }
-        }
-
-        private void btn_criarConta_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new View.CriarConta());
         }
     }
 }

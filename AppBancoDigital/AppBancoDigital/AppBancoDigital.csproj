@@ -19,6 +19,7 @@
     <None Remove="Images\credit-card-regular.png" />
     <None Remove="Images\eye.png" />
     <None Remove="Images\icone-pix.png" />
+    <None Remove="Images\left-arrow.png" />
     <None Remove="Images\mobile-screen-button-solid.png" />
     <None Remove="Images\piggy-bank-solid.png" />
     <None Remove="Images\pix-chave.png" />
@@ -49,6 +50,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Images\icone-pix.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\left-arrow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Images\mobile-screen-button-solid.png">

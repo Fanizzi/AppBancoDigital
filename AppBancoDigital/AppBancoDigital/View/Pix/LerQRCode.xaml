@@ -4,15 +4,21 @@
              x:Class="AppBancoDigital.View.Pix.LerQRCode">
     <ContentPage.Content>
         <StackLayout>
-            <Grid RowDefinitions="*" ColumnDefinitions="*,*,*,*,*" >
-
-                <Label Text="Pix" Margin="108,22,0,20" 
+            <Grid ColumnDefinitions="3"
+                  RowDefinitions="Auto">
+                <Label Text="Pix"
                        FontAttributes="Bold"
                        FontSize="15"
                        TextColor="Black"
-                       Grid.Column="1"
-                       Grid.Row="0"
-                       Grid.ColumnSpan="3"/>
+                       HorizontalOptions="Center"
+                       Grid.Column="2"
+                       Margin="0, 40, 0, 0"/>
+
+                <ImageButton x:Name="btnVoltar" Clicked="btnVoltar_Clicked" BackgroundColor="Transparent"
+                         Scale="0.6" HorizontalOptions="Start" Grid.Column="1" Margin="10, 32, 0, 0"/>
+
+                <ImageButton x:Name="btnDuvida" BackgroundColor="Transparent" Grid.Column="3" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="25" 
+                             Margin="0, 40, 20, 0" Clicked="btnDuvida_Clicked"/>
             </Grid>
 
 

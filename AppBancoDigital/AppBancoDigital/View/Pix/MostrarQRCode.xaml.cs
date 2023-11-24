@@ -30,5 +30,15 @@ namespace AppBancoDigital.View.Pix
             byte[] qrCodeBytes = qRCode.GetGraphic(20);
             img_qrcode.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
         }
+
+        private void btnVoltar_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDuvida_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
